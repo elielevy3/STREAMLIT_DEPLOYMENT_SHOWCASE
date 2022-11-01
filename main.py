@@ -49,6 +49,6 @@ with col2:
 
 # check the code
 if st.checkbox("Display code of the page"):
-    file_path = "/Users/elevy/Documents/WYSEDAYS/ATELIER/STREAMLIT/STREAMLIT_DEPLOYMENT_SHOWCASE/main.py"
+    file_path = "./main.py"
     with open(file_path, 'r') as file:
         st.code(file.read(), language='python')
