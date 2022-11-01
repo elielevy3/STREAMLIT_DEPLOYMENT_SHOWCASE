@@ -37,6 +37,8 @@ with col4:
 results = data[(data.price < max_price) & (data.neighbourhood.isin(hood_options)) & (data.room_type.isin(selected_room_types))]
 col1, col2 = st.columns(2)
 
+st.session_state.results = results
+
 with col1:        
     st.dataframe(results[columns])
     st.write(str(len(results))+" results")
@@ -45,9 +47,8 @@ with col2:
     # display in the map
     st.map(results)
 
-
 # check the code
 if st.checkbox("Display code of the page"):
-    file_path = "/Users/elevy/Documents/WYSEDAYS/ATELIER/STREAMLIT/Welcome.py"
+    file_path = "/Users/elevy/Documents/WYSEDAYS/ATELIER/STREAMLIT/STREAMLIT_DEPLOYMENT_SHOWCASE/main.py"
     with open(file_path, 'r') as file:
         st.code(file.read(), language='python')
