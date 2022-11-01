@@ -31,7 +31,7 @@ def get_line_data():
 def get_data(sample_size): 
 
     # get raw data from csv
-    data = pd.read_csv("./data/listings.csv")
+    data = pd.read_csv("./listings.csv")
 
     # remove empty columns not to overload displaying
     data = data.drop(columns = ["neighbourhood_group", "license", "id", "host_id"])
