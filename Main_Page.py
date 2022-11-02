@@ -13,6 +13,8 @@ col_1, col_2, col_3, col4 = st.columns(4)
 with col_1: 
     st.header("Column selection")
     columns = st.multiselect("Choose the column you want to display", data.columns)
+    if st.checkbox("All columns"): 
+        columns = data.columns
 
 with col_2: 
     st.header("Neighbourhood")

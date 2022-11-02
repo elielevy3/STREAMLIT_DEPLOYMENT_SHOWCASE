@@ -8,7 +8,7 @@ import pandas as pd
 # are all the same
 # function is not executed
 # get data and store them into cache not to retrieve them everytime an streamlit element in modified
-@st.cache()
+@st.experimental_singleton
 def get_data(sample_size): 
 
     # get raw data from csv
