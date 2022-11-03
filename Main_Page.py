@@ -15,8 +15,8 @@ def get_data(sample_size):
 
     return data.sample(sample_size)
 
-st.set_page_config(layout="wide", page_title="London Airbnb booking dataset exploration 🏠")
-st.markdown("# Welcome to London AirBnb booking dataset exploration 🏠")
+st.set_page_config(layout="wide", page_title="London Airbnb bookings exploration 🏠")
+st.markdown("# Welcome to London AirBnb bookings exploration 🏠")
 
 
 # get data
