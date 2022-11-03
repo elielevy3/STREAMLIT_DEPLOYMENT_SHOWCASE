@@ -40,12 +40,12 @@ def get_data(sample_size):
 #         st.form_submit_button('Login')
 
 
-def get_bar_chart_data(data, bins, field): 
-    bar_chart_data = data[[field]]
-    bar_chart_data = bar_chart_data.groupby(pd.cut(bar_chart_data[field], bins)).count()
-    bar_chart_data.columns = ["count"]
-    bar_chart_data[field] = list(bins)[:-1]
-    return bar_chart_data
+# def get_bar_chart_data(data, bins, field): 
+#     bar_chart_data = data[[field]]
+#     bar_chart_data = bar_chart_data.groupby(pd.cut(bar_chart_data[field], bins)).count()
+#     bar_chart_data.columns = ["count"]
+#     bar_chart_data[field] = list(bins)[:-1]
+#     return bar_chart_data
 
 
 # sample data with slider

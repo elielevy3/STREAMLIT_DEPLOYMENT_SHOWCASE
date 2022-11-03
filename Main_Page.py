@@ -1,8 +1,23 @@
 import streamlit as st
-from utility import get_data
+import pandas as pd
 
-st.set_page_config(layout="wide", page_title="Fil Rouge WyseDay 17/11/2022")
-st.markdown("# Welcome to London AirBnb booking dataset exploration !")
+@st.experimental_singleton
+def get_data(sample_size): 
+
+    # get raw data from csv
+    data = pd.read_csv("./listings.csv")
+
+    # remove empty columns not to overload displaying
+    data = data.drop(columns = ["neighbourhood_group", "license", "id", "host_id"])
+
+    # remove index as we do not need them in the workshop
+    data.reset_index(inplace=True)
+
+    return data.sample(sample_size)
+
+st.set_page_config(layout="wide", page_title="London Airbnb booking dataset exploration 🏠")
+st.markdown("# Welcome to London AirBnb booking dataset exploration 🏠")
+
 
 # get data
 data = get_data(3000)
