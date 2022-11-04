@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+
 # if the input parameters 
 # value of any external variable used in the function
 # The body of the function
@@ -14,11 +15,11 @@ def get_data(sample_size):
     # get raw data from csv
     data = pd.read_csv("./listings.csv")
 
-    # remove empty columns not to overload displaying
-    data = data.drop(columns = ["neighbourhood_group", "license", "id", "host_id"])
-
     # remove index as we do not need them in the workshop
     data.reset_index(inplace=True)
+
+    # remove empty columns not to overload displaying
+    data = data.drop(columns = ["neighbourhood_group", "license", "id", "host_id"])
 
     return data.sample(sample_size)
 
@@ -51,3 +52,6 @@ def get_data(sample_size):
 # sample data with slider
 # sample_size = st.slider("Select sample size", min_value=1, max_value=500, value=(st.session_state.sample_size if "sample_size" in st.session_state else 250))
 # st.session_state.sample_size = sample_size
+
+# lat and long correspond to the center of the plot
+# we compute it by taking the average of lat and long from the data we recieve
