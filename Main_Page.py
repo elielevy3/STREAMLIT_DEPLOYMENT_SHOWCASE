@@ -16,7 +16,7 @@ def get_data(sample_size):
     # sample
     return data.sample(sample_size)
 
-st.set_page_config(layout="wide", page_title="Airbnb Bookings Exploration", page_icon="🏠")
+st.set_page_config(layout="wide", page_title="Airbnb Bookings Exploration", page_icon="🏠", menu_items={"Get Help" : "https://github.com/elielevy3/STREAMLIT_DEPLOYMENT_SHOWCASE"})
 st.markdown("# Welcome to London AirBnb Bookings Exploration 🏠")
 
 # get data
