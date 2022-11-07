@@ -40,7 +40,7 @@ with col_2:
 
 with col_3:
     st.header("Max price")
-    max_price = st.slider("Pick a max price", min_value=0, max_value=500) 
+    min_price, max_price = st.slider("Pick your min and max price", value=(0, 1000))
 
 with col4: 
     st.header("Room type")
@@ -49,7 +49,7 @@ with col4:
     selected_room_types = [room_type for room_type, selected in room_types_dict.items() if selected]
 
 # display dataframe and plot
-results = data[(data.price < max_price) & (data.neighbourhood.isin(selected_hoods)) & (data.room_type.isin(selected_room_types))]
+results = data[(data.price <= max_price) & (data.price >= min_price) (data.neighbourhood.isin(selected_hoods)) & (data.room_type.isin(selected_room_types))]
 st.session_state.results = results
 
 col1, col2 = st.columns(2)
