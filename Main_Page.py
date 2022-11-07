@@ -57,7 +57,7 @@ col1, col2 = st.columns(2)
 with col1:  
     if st.sidebar.checkbox("Display dataframe"):   
         st.dataframe(results[selected_cols])
-        st.write(str(len(results))+" results")
+        st.write(str(len(results)), "results")
 
 with col2: 
     if st.sidebar.checkbox("Display map"):
